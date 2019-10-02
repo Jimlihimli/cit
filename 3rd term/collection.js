@@ -6,7 +6,7 @@ person6="Rictus",
 person7="Dag"
 console.log(person1, person2, person5)
 
-var madmaxCharacter = [ "Max" , "Furiosa" , "Joe", "Warboy" ]
+var madmaxCharacter = [ "Max" , "Furiosa" , "Joe", "Warboy" ]//Collection
 console.log(madmaxCharacter)
 console.log(madmaxCharacter[1])
 
