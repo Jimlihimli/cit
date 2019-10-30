@@ -2,51 +2,73 @@
 
 var person = {
   name : "Hong Kim",
-  nationality : "Korea",
-  drug : false,
+  nationality : "Japan",
+  drug : true,
   luggageWeight : 27,
   cash : 33,
   leftcash : null
 };
 
-switch(person.nationality){
-  case "Korea":{
-    console.log("안녕하세요, 무슨 일로 출국하시나요?")
-    break
-  }
-  case "USA":{
-    console.log("Hi. what's your purpose of travel?")
-    break
-  }
-  case "Japan":{
-    console.log("こんにちは、どのような事で出国か？")
-    break
-  }
-  default :{
-    console.log("지원하지 않는 나라입니다.")
-    return
-  }
-}
+// var question
+//
+// switch(person.nationality){
+//   case "Korea":{
+//     question = "안녕하세요, 무슨 일로 출국하시나요?"
+//     break
+//   }
+//   case "USA":{
+//     question = "Hi. what's your purpose of travel?"
+//     break
+//   }
+//   case "Japan":{
+//     question = "こんにちは、どのような事で出国か？"
+//     break
+//   }
+//   default :{
+//     question ="지원하지 않는 나라입니다."
+//     return
+//   }
+// }
+// console.log(question)
+
+var question = {
+  Korea : {
+    hello : "안녕하세요",
+    out : "나가!"
+  },
+  USA : "HI",
+  Japan  : {
+    hello : "konnichiwa",
+    out : "deteike!"
+  }}
+
+console.log( question[ person.nationality  ].hello )
+
+
+
 
 // if(drug.true)를  썼을 때 오류발생.
 if(person.drug){
-  console.log("당신 나가!, piss off!, あなたは私が！")
+  console.log( question[ person.nationality  ].out )
   return
 } else {
   console.log("통과입니다.")
 }
 
-if(person.luggageWeight>=20&&person.luggageWeight<25){
-  person.leftcash=person.cash-5
-} else if(person.luggageWeight>=25&&person.luggageWeight<30){
-  person.leftcash=person.cash-10
-} else if(person.luggageWeight>=30){
+if(person.luggageWeight>=30){
   person.leftcash=person.cash-20
+} else if(person.luggageWeight>=25){
+  person.leftcash=person.cash-10
+} else if(person.luggageWeight>=20){
+  person.leftcash=person.cash-5
 } else {
   person.leftcash=person.cash
 }
 
 console.log("남은 금액 = "+person.leftcash)
+
+//template literal
+console.log(`Oh my god, 내 지갑에 ${person.left} 달러밖에 안남았네!`)
 
 console.log("Oh my god, 내 지갑에 "+person.left+"달러밖에 안남았네!")
 // // 첫번쨰 심사대 : nationality에 따라서

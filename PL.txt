@@ -1,0 +1,46 @@
+(Computer) Programming Language
+
+프로그래밍 : 프로그램을 만드는 것
+(코딩 : 코드를 쓴다는 관점에서 바라본 프로그래밍)
+프로그래밍 언어 : 프로그램을 만들기 위한 규칙
+
+컴퓨터 프로그래밍 : 컴퓨터에서 작동하는 프로그램을 만드는 것
+컴퓨터 : 하드웨어로 CPU, Memory, I/O(입출력) 인터페이스의 3요소를 모두 갖춘 기계
+컴퓨터 프로그램(소프트웨어) : 메모리에 전기신호로 저장되어 I/O를 통해 CPU로 실행되는 것
+
+--------
+언어선택 : JavaScript
+
+0. 세팅 (프로그래밍 환경)
+HW : 컴퓨터
+SW (OS 제외, 추가 application)
+  0) 컴파일러/인터프리터 : 코드를 실행시켜주는 프로그램 / node.js
+  1) 코드에디터 : (색깔을 구별하여) 편리하게 코드를 작성하게 해주는 프로그램 / atom
+  2) VCS(Version Control System) : 코드를 버전별로 관리해주는 프로그램 / git
+      - Github : 내 코드를 (클라우드에) 저장해주는 웹사이트(웹서비스)
+      - Github Desktop : 내 컴퓨터의 git 폴더(git로 관리되는 폴더)를 github에 쉽게
+                업로드/다운로드 하게 해주는 프로그램
+
+* 터미널 사용법 (OS가 제공하는 기본 프로그램)
+cd
+dir
+-> 무한루프 발생시, ctrl + c 혹은 ctrl + z로 강제종료
+
+-> 세팅이 완료된 후, 가장 기본적인 print code를 실행 / console.log()
+
+1. Data & Operation
+
+2. Variable ( <- Collection )
+
+3. Control
+
+Expression
+  * false와 동치인 데이터 : 0, "", false, undefined, null
+Statement
+
+Scope (global, local)
+
+- Branch ()
+- Loop ()
+  * break
+- Exception (try - catch - finally)
