@@ -22,25 +22,87 @@ SW (OS 제외, 추가 application)
                 업로드/다운로드 하게 해주는 프로그램
 
 * 터미널 사용법 (OS가 제공하는 기본 프로그램)
-cd
-dir
+cd :
+dir :
 -> 무한루프 발생시, ctrl + c 혹은 ctrl + z로 강제종료
 
 -> 세팅이 완료된 후, 가장 기본적인 print code를 실행 / console.log()
 
 1. Data & Operation
-
+     Data : number, string, boolean
+     Operation : 산술연산(+,-,*,/), 비교연산(<,>,<=,!=...,) -> 결과 데이터가 boolean, 논리연산(&&-and ,||-or, !-not)
 2. Variable ( <- Collection )
+     data를 저장하기 위해 variable 사용
+     Variable. 1단계 : declaration(선언) -> 변수를 만듦
+               2단계 : assignment(할당) -> 데이터를 변수에 지정해줌(넣어줌)
+               선언은 한번만 가능하지만 할당을 여러번 할 수 있다(재할당 가능)
 
+     Collection. : array(배열), Object(객체)
+                   array->number index로 되어 있음(index는 element를 구분하는 기준)
+                   Object->name index로 되어 있음(index가 숫자가 아님)
+                   index를 key라고 부름 : (key:value 페어)
 3. Control
+     코드 흐름을 조절(설계-Design)해준다.
+     1.branch :
+     2.loop :
+     3.exception,error :
 
 Expression
-  * false와 동치인 데이터 : 0, "", false, undefined, null
+      그 자체로 값(value)을 가지고 있는(산출해내는) 코드
+      예)3, 5+5, true
+  * false와 동치인 데이터(JS) : 0, "", false, undefined, null
+
 Statement
+      그 자체로 값(value)을 가지고 있지는 않지만 일(작업)을 수행하는 능력을 갖고 있는 코드
+
 
 Scope (global, local)
+      variable이 활용될 수 있는 공간
+      예) JS의 if(){}에서 {}안에 있는 공간(수식)은 local scope, 전체 코드에서는 global scope라 부름
 
-- Branch ()
-- Loop ()
-  * break
-- Exception (try - catch - finally)
+- Branch () : 특정 요건(조건)을 Boolean값으로 평가하여(바탕으로) case에 따른 결과(코드)가 실행되도록(도출되도록) 만듦
+ if, else if, else, switch
+- Loop () : 같은 작업을 일정한 요건(조건)이 false가 될 때까지 반복함
+while, for
+  * break : loop을 빠져나가줌
+- Exception  : 에러 처리(고급 테크닉)
+try~catch,finally
+
+4. Function
+* function과 program
+   -Function은 프로그램과 비슷한 개념으로 parameter를 input하면
+   return value가 output되게 만들어주는 기능(Work, Process)을 한다.
+   - 프로그램은 하나 이상의 function으로 구성되어있고, 하나의 프로그램이
+   다른프로그램 내에서 function의 역할을 할수있다 -> 모듈화 (modularization)
+
+* function의 구조
+  - 구성요소 : parameter, return value, name, work-code, scope
+   - 선언(Make) - Javascript  : statement
+                      function funcName(parameter){
+                          코드
+                          return 'expression'(return value)
+                       }
+   - 사용/호출(Use) : expression
+
+-------
+프로그램/코드의 평가 단계
+1. 기능 수행
+2. 성능 / 효율 증대
+- 시간 감소(프로그램 구동 시간)
+- 공간 감소 (차지하는 메모리 용량)
+- 가독성 증대 -> 개발자 입장에서, 유지/보수/개선/추가 등에 좋다.
+  - 명확한 변수명 : 변수명을 보면 그 변수가 포함할 데이터의 성격이 명확히 드러나야함
+  - 짧은 코드(80%?) : 스크롤압박이 적고, 많은 경우짧은 코드가 시간/공간도 감소시킴.
+  - 재사용성(reusability)/모듈화 : 코드의 로직과, I/O부분이 명확히 분리되면,
+    해당 코드가 하나의 모듈이 되어, 다른 환경과 상황에도 코드를 사용할 수 있다.
+3. 보안
+
+
+--- Tip
+CamelCasing :
+
+if문 구조에서, 조건 부분에는 반드시 expression이 들어가고,
+scope 코드에는 주로 statement가 들어가 있다.
+
+만일 if문 안에 특정 값이 넣어져 있으면 그 값이 expression, 조건식과 같은 수식이
+들어 있으면 그것은 statement
