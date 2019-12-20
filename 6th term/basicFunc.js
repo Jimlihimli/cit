@@ -15,6 +15,8 @@ function quadratic (a, b, c){
     return ( -b + (b ** 2 - 4 * a* c) ** (1/2) ) / (2 * a)
 }
 
+
+module.exports = {sh : sayHi}
 // console.log( plus5 * sayHi )
 
 sayHi("Tom")
