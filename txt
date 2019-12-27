@@ -17,3 +17,19 @@ API : application programming interface
       (다른 사람의 것으로 어떻게 갔다 써야 하는가?)
 
 npm start : 로컬 서버를 실행시켜서 CRA로 만든 웹코드를 볼 수 있게 해주는 명령어
+
+
+swtest/src/App.js-우리가 하던 코드
+let-블록지역에서 선언한 것을 전역에서 바꿀 수 없다.
+var-블록지역에서 선언한 것을 전역에서 바꿀 수 있다.
+const-재할당할 수 없음
+
+high level language는 하드웨어에 직접 접근이 low level과 비교해서 낮다.
+
+expression과 statement 구분 방법
+console.log()안에 넣어봤을때 값이 undefined로 나오거나 에러가 나오면 statement. 나오면 expression(값을 가지고 있음)
+
+class는 서로다른 오브젝트를 찍어내는 틀
+Object Orient Program 객체지향프로그램
+
+class의 5가지 핵심개념 class, object, property(variable, data), method(function), inheritance(classrksdml 관계)

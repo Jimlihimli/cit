@@ -90,6 +90,17 @@ Algorithm
 
    module : 하나의 단계를 수행하는 최소 단위의 프로그램
 
+
+
+
+
+7. advanced
+  변수 선언이 3가지 방법
+    var : 전역변수globa variable, scope에 구에받지 않고 어디서나 접근 가능
+    let : 지역변수local variable, scope에 구에받음
+    const : reassign이 안됨(보안, 바뀌지 않는 정보)
+
+
 -------
 프로그램/코드의 평가 단계
 1. 기능 수행
