@@ -2,6 +2,7 @@ let hi = 7
 
 function bark(name){
   console.log(`Hi! my name is ${name}`)
+  
 }
 
 let meow = (name) => {

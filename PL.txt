@@ -72,10 +72,14 @@ Algorithm
 
 4. Function
 * function과 program(작은 프로그램 개념)
+  * A function is a subprogram designed to perform a particular task.
    -Function은 프로그램과 비슷한 개념으로 parameter를 input하면
    return value가 output되게 만들어주는 기능(Work, Process)을 한다.
    - 프로그램은 하나 이상의 function으로 구성되어있고, 하나의 프로그램이
    다른프로그램 내에서 function의 역할을 할수있다 -> 모듈화 (modularization)
+
+   Function Objects.
+   Functions are function objects. In JavaScript, anything that is not a primitive type ( undefined, null,boolean, number, or string) is an object. Objects in JavaScript are extremely versatile. Because of this, we can even pass a function as a parameter into another function.
 
 * function의 구조
   - 구성요소 : parameter, return value, name, work-code, scope
