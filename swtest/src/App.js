@@ -11,7 +11,7 @@ function App() {
   return (
   <div>
     <Name2 nam = "SW"/>
-   <Car brand = "Hyundai" model ="avante" color = "orange" />
+   <Car brand = "Ferrari" model ="lamborghini" color = "orange" />
   </div>
   );
 }//return(JSX)-항상 div박스(그 이외에도 p도)는 하나만 존재해야 함.

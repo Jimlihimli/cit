@@ -34,11 +34,14 @@ console.log()안에 넣어봤을때 값이 undefined로 나오거나 에러가 �
 class는 서로다른 오브젝트를 찍어내는 틀
 Object Orient Program 객체지향프로그램
 
-class의 5가지 핵심개념 class, object, property(variable, data), method(function), inheritance(class간의 관계)
+class의 5가지 핵심개념 class, object(instance), property(variable, data), method(function), inheritance(class간의 관계)
 
 syntax는 코드의 외형(def(파이썬)과 function(자바스크립트))
 javascript에선 function과 class가 큰 차이가 존재하지 않음, class는 function을 조합해서 만듬?
 
-class는 object를 만들어내는 틀이고 class안의 constructor가 object를 찍어낸다.
+class는 object를 만들어내는 틀이고 class안의 constructor가 object(데이터구조)를 찍어낸다.
 this.는 object 자기 자신을 나타내어준다.
 class나 object안의 데이터를 property, function을 method라고 부름
+
+-이름은 띄어서 쓰지 말기
+-function eat(){}가 있을 때 console.log(eat)를 실행하면 function 자체의 내용과 구조(혹은 존재)를 프린트함
