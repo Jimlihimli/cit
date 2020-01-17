@@ -1,9 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 import {Car,Name2} from "./test.js"
-
 
 
 function App() {
@@ -11,6 +8,7 @@ function App() {
   return (
   <div>
     <Name2 nam = "SW"/>
+    <p>fghjkl</p>
    <Car brand = "Ferrari" model ="lamborghini" color = "orange" />
   </div>
   );
@@ -19,7 +17,6 @@ function App() {
 //function에서 하나의 fucntion이 다른 function을 가져오는 것이 가능하다.
 //function이나 class로도 react의 component를 나타낼 수 있다
 export default App;
-
 
 
 // <div>

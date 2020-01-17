@@ -95,9 +95,6 @@ Algorithm
    module : 하나의 단계를 수행하는 최소 단위의 프로그램
 
 
-
-
-
 7. advanced
   변수 선언이 3가지 방법
     var : 전역변수globa variable, scope에 구에받지 않고 어디서나 접근 가능

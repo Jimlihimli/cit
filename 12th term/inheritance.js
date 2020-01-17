@@ -19,7 +19,7 @@ class ActionMovie extends Movie{
     this.shakeCam = 100;
   }
   Action(){
-    return this.director + "decided shakeCam to be" + this.shakeCam;
+    return this.director + "decided shakeCam to be" + this.shakeCam;//상속받지 않아서 director값은 undefined, shakeCam은 위의 100으로 나오는 것임
   }
   // interview : {director} decided shakeCam to be {shakeCam}
 }
