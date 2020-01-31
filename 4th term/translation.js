@@ -1,6 +1,6 @@
 var person={
   name: "Lee",
-  nationality: "Russia",
+  nationality: "Japan",
   married: true,
   age: 27
 };

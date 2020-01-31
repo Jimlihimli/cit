@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Car,Name2} from "./test.js"
+import {HeechLogin} from "./heechLogin.js"
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <Name2 nam = "SW"/>
     <p>fghjkl</p>
    <Car brand = "Ferrari" model ="lamborghini" color = "orange" />
+   <HeechLogin />
   </div>
   );
 }//return(JSX)-항상 div박스(그 이외에도 p도)는 하나만 존재해야 함.

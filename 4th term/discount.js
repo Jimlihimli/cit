@@ -1,6 +1,6 @@
 // Seungwoo's code
 
-var price= "ㅏㅓㅗ"
+var price= "34"
 var discountedPrice
   if(price<10){
   discountedPrice= price
@@ -18,6 +18,7 @@ var txt1= "귀하의 지불금액은 "
 var txt2= " 입니다."
 
 console.log(txt1+ discountedPrice+ txt2)
+console.log("귀하의 지불금액은 "+ discountedPrice +"입니다.")
 
 ////////////////////////////////
 // teacher's code.

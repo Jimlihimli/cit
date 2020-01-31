@@ -45,3 +45,19 @@ class나 object안의 데이터를 property, function을 method라고 부름
 
 -이름은 띄어서 쓰지 말기
 -function eat(){}가 있을 때 console.log(eat)를 실행하면 function 자체의 내용과 구조(혹은 존재)를 프린트함
+
+html은 구조를 결정,css는 디자인을 구성
+
+event 예시)마우스 이동,클릭 ,키보드 입력
+attribute-태그의 속성을 저장하는 property
+event attribute안에는 화살표 함수(익명함수(anonymous function))를 넣기
+언제 사용될지 알고 사용하는 것이 attribute의 속성?
+
+기본적으로 제공된 태그가 존재한다(<>태그)
+(예)<button></button>,<p></p>등
+
+텍스트에서는 onKeyPress보다 onChange를 쓰는 것이 나음
+onClick -> 클릭하는 event가 있을때 해당 메소드를 실행한다
+
+   props:바꾸지 않을 데이터에 사용(자율적으로 쓸 수 있음)
+<->state:바뀌는 데이터에 사용(component안에 쓰는 것이 좋음)

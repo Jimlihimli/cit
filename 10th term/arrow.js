@@ -2,7 +2,8 @@ let hi = 7
 
 function bark(name){
   console.log(`Hi! my name is ${name}`)
-  
+  //return값이 없으면 위 문장 다음에 undefined로 나옴
+  return name
 }
 
 let meow = (name) => {

@@ -1,4 +1,4 @@
-var hour = 3
+var hour = 8
 
 console.log(hour < 7)
 

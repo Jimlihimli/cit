@@ -24,14 +24,17 @@ class Car extends React.Component {
       brand: "Ford",
       model: "Mustang",
       color: "green",
-      year: 2015//State라는 property에 저장되어있는 객체의 index
+      year: 2015, //State라는 property에 저장되어있는 객체의 index,
+      sven : "IamSven"
     };
   }
   changeColor = () => {
     this.setState({color: "purple"});
   }
-  changeYear = () => {
-    this.setState({year: "2018"});
+  changeYear = (data) => {
+    this.setState({year: data.target.value});
+      console.log(data.target.value)
+    return 1
   }
   // changeBrand = () => {
   //   this.setProps({brand: "Nissan"});
@@ -49,11 +52,12 @@ class Car extends React.Component {
           type="button"
           onClick={this.changeColor}
         >Change color</button>
-
+      <input onChange = {(event) => this.changeYear(event)} />
         <button
           type="button"
           onClick={this.changeYear}
         >Change year</button>
+        <p> {this.state.sven}</p>
       </div>
       //
       // <button
