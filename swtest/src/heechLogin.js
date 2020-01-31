@@ -1,4 +1,8 @@
 import React from "react";
+import {Button} from "semantic-ui-react"
+
+// import egy from './egypt.PNG'
+// import tst from './test.jpg'
 
 const ID = "swtest"
 const PW = "sw1234"
@@ -34,7 +38,7 @@ class HeechLogin extends React.Component {
         <input onChange = {this.changeID}/>
         <br/>
         <input onChange = {this.changePW}/>
-        <button onClick = {this.loginTest}> 로그인을 해보거라.</button>
+        <Button onClick = {this.loginTest}> 로그인을 해보거라.</Button>
         <p> {this.state.loginStatus} </p>
       </div>
     );
