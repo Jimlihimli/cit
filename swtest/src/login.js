@@ -22,7 +22,6 @@ class Login extends React.Component{
         <h1>login</h1>
         <input onChange = {(ID)=>}
       </div>
-
     );
   }
 }
