@@ -1,7 +1,7 @@
 import React from "react";
 import {Button} from "semantic-ui-react"
 
-// import egy from './egypt.PNG'
+import egy from './egypt.PNG'
 // import tst from './test.jpg'
 
 const ID = "swtest"
@@ -19,6 +19,11 @@ class HeechLogin extends React.Component {
 //'3' === 3 False
 // "3" == 3 True
   changeID = (e) => this.setState({id : e.target.value})
+  changeID2 = (e) => {
+    if(e.key == "Enter"){
+      this.loginTest()
+    }
+    }
   changePW = (e) => this.setState({pw : e.target.value})
   loginTest = () => {
     if (this.state.id === ID && this.state.pw === PW){
@@ -35,9 +40,10 @@ class HeechLogin extends React.Component {
   render() {
     return (
       <div>
-        <input onChange = {this.changeID}/>
+      <img src = {egy} />
+        <input onChange = {this.changeID} onKeyPress = {(e)=>this.changeID2(e)}/>
         <br/>
-        <input onChange = {this.changePW}/>
+        <input onChange = {this.changePW} onKeyPress = {(e)=>this.changeID2(e)}/>
         <Button onClick = {this.loginTest}> 로그인을 해보거라.</Button>
         <p> {this.state.loginStatus} </p>
       </div>
