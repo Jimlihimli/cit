@@ -1,0 +1,62 @@
+20200214
+1. visual studio에서 자바스크립트 계열 코드는 못하는 것으로 나와 있던데, 그러면 나중에 모든 코드를
+ 쓸 때 atom을 활용하는 것이 효율적인지, 아니면 비주얼 스튜디오도 어느정도 활용하는 것이 효율적인지
+ 궁금합니다.(비주얼 스튜디오의 언어 다운로드와 설명제시와 관련)
+ > Visual Studio에서 자바스크립트 코드 작성할 수 있습니다.
+2.visual studio에서 javascrpit, react를 다운받고 싶은데 마켓플레이스에서 어떠한 것을 다운받으면
+ 되나요?
+ > 1) 자바스크립트는 언어이기 때문에 "다운로드 받는다"는 표현이 부적절합니다.
+ 2) 리액트는 NPM을 통해서, 터미널에서 다운로드 받으면, 프로젝트 폴더 안의 node_modules 폴더 안에 react가
+ 다운로드 되고, VScode에서 해당 프로젝트 폴더를 열면 됩니다.
+ 다시말해서, 마켓플레이스에서 다운 받을 필요가 없어요! 터미널에서 npm으로 받는게 더 간결하니까.
+ 그런데도 굳이 마켓플레이스에서 다운받는 방법이 궁금하다면, 그 방법은 제가 지금 모르고, 인터넷을 쳐봐야 합니다.
+ 모르는 이유는, 필요하지 않아서, 안찾아봤기 떄문이겠죠?
+3. 코딩으로 수익을 창출하지 않는, 개인적으로만 사용할 경우 (그룹활동 없이) 대략적으로 코딩을 잘 짤수 있는
+ 팁을 인터넷에서 찾는 것이 효율적일까요? 아니면 직접 도서관에서 책을 읽으며 찾는 것이 효율적일까요?
+ > 코딩의 기본실력을 익히기 위해서라면, 예전에 쓰여진 좋은 책을 도서관에서 찾아 읽는 것도 좋겠습니다. 그러나
+ 최신자료를 얻으려면 인터넷이 더 좋고, 개인적으로 인터넷에서 자료를 찾는 것을 더 추천합니다.
+ 검색능력, 좋은 정보를 구별할 수 있는 능력을 많이 가지고 있을 수록, 인터넷에서 자료를 찾는 편이 좋다.
+ 그런데 기본 지식이 없으면, 정보의 바다에 휩쓸려 익사한다. 책 하나를 붙드는게 나을수도.
+
+https://medium.com/swlh/how-to-deploy-a-react-app-with-firebase-hosting-98063c5bf425
+
+20200215
+1. npm run build ->
+  C:\Users\jsl97\OneDrive\바탕 화면\webprogramming\cit\web-is-tool>npm build run
+  npm ERR! code ENOENT
+  npm ERR! syscall open
+  npm ERR! path C:\Users\jsl97\OneDrive\바탕 화면\webprogramming\cit\web-is-tool\run\package.json
+  npm ERR! errno -4058
+  npm ERR! enoent ENOENT: no such file or directory, open 'C:\Users\jsl97\OneDrive\바탕 화면\webprogramming\cit\web-is-tool\run\package.json'
+  npm ERR! enoent This is related to npm not being able to find a file.
+  npm ERR! enoent
+
+  npm ERR! A complete log of this run can be found in:
+  npm ERR!     C:\Users\jsl97\AppData\Roaming\npm-cache\_logs\2020-02-15T09_23_57_453Z-debug.log
+
+  ->이런 오류가 뜨는 것은 당연.
+
+  그러므로 npm run build라고 써야 함!!
+
+  20200218
+  1. cmd에서 js파일을 확장자를 붙이지 않고 실행해도 실행이 되었습니다.(보통 node 폴더명.js로 하는데
+    여기선 node 폴더명으로 해서 실행됐움.).이것이 보통인가요?
+    >node.js에서 자바스크립트 코드의 경우 확장자를 붙이지 않아도 됩니다. 다만 확장자 붙이는 습관을 들이는
+     것이 중요하다는 것을 알아두셔야 합니다.(node.js설치)
+
+  20200221
+  1. firebase에 저장된 모든 파일을 페이지에 자동적으로 나타나게 하려면 어떻게 해야 하나요?
+  > 파일을 저장했다는 말을 보니 firebase storage를 의미하는 것 같고, 그러면 firebase storage의 api를 조금 살펴봐야 합니다.
+  살펴봅시다.
+
+  20200223
+  1. 동영상을 web-as-tool 웹을 통해 storage에 올리려 시도했는데 400, 403에러가 뜨면서 실패했습니다.
+  > firebase의 해당 계정의 Storage Rules에 이렇게 되어 있을 것이다.
+  service firebase.storage {
+    match /b/{bucket}/o {
+      match /{allPaths=**} {
+        allow read, write: if request.auth!=null;
+      }
+    }
+  }
+  여기서 request.auth!=null에서 !=를 ==로 바꾸면 작동될 것이다.

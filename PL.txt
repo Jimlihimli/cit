@@ -125,4 +125,6 @@ scope 코드에는 주로 statement가 들어가 있다.
 만일 if문 안에 특정 값이 넣어져 있으면 그 값이 expression, 조건식과 같은 수식이
 들어 있으면 그것은 statement
 
+prettier : 정해진 규칙에 따라 코드를 특정하게 정리해주 도구
+
 return value - return된 데이터

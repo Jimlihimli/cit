@@ -44,7 +44,7 @@ class HeechLogin extends React.Component {
         <input onChange = {this.changeID} onKeyPress = {(e)=>this.changeID2(e)}/>
         <br/>
         <input onChange = {this.changePW} onKeyPress = {(e)=>this.changeID2(e)}/>
-        <Button onClick = {this.loginTest}> 로그인을 해보거라.</Button>
+        <Button onClick = {this.loginTest}> 로그인하기</Button>
         <p> {this.state.loginStatus} </p>
       </div>
     );
