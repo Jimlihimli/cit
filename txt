@@ -70,3 +70,7 @@ firebase init - 초기화
 
 npm run build
 firebase deploy
+
+리팩터링은 소프트웨어 공학에서 '결과의 변경 없이 코드의 구조를 재조정함'을 뜻한다.
+Authentication
+https://firebase.google.com/docs/auth

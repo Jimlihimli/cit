@@ -60,3 +60,13 @@ https://medium.com/swlh/how-to-deploy-a-react-app-with-firebase-hosting-98063c5b
     }
   }
   여기서 request.auth!=null에서 !=를 ==로 바꾸면 작동될 것이다.
+  아니면 아예 편하게 if request.auto!=null을 전부 지워도 된다.
+
+20200315
+ 1. 배경화면에 색을 칠하려 하는데 일정 텍스트에만 박스 형태로 색이 칠해집니다.
+ > style={{ display:'inline-block', width:'100px', height:'100px',  backgroundColor: 'brown'}}에서
+  backgroundColor와 width,height가 같이 있으면 배경색을 칠하고 싶더라도 그 색이 박스 형태의 모형 안에 들어가 있는 형식으로 나오게 된다.
+ 2. 색을 바꾸고 싶을 때에 hex코드를 사용할 수 있나요?
+ > 'red','purple'과 같은 텍스트로 색을 넣을 수 있고 또 hex코드를 사용하여 color:"#22222FF"와 같이 넣을 수 있습니다
+   예)<h1 style={{color:"#c142fc"}}>Hello World!</h1>
+   (hex코드 사용 가능합니다.)

@@ -128,3 +128,10 @@ scope 코드에는 주로 statement가 들어가 있다.
 prettier : 정해진 규칙에 따라 코드를 특정하게 정리해주 도구
 
 return value - return된 데이터
+
+-url 주소
+ web-is-tool.firebaseapp.com
+ web-is-tool.web.app
+
+ notion.so
+ android형은 별로?
