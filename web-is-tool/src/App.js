@@ -1,47 +1,73 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import firebase from 'firebase';
-import ReactPlayer from 'react-player'
+import React from "react";
+import logo from "./logo.svg";
+import firebase from "firebase";
+import ReactPlayer from "react-player";
 
 // Set the configuration for your app
 // TODO: Replace with your app's config object
 var firebaseConfig = {
-    apiKey: "AIzaSyBsvlQeTsMVePO4_vJSrl3sHrgf18SQTOY",
-    authDomain: "web-as-tool.firebaseapp.com",
-    databaseURL: "https://web-as-tool.firebaseio.com",
-    projectId: "web-as-tool",
-    storageBucket: "web-as-tool.appspot.com"
+  apiKey: "AIzaSyBsvlQeTsMVePO4_vJSrl3sHrgf18SQTOY",
+  authDomain: "web-as-tool.firebaseapp.com",
+  databaseURL: "https://web-as-tool.firebaseio.com",
+  projectId: "web-as-tool",
+  storageBucket: "web-as-tool.appspot.com"
 };
 firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 var storage = firebase.storage();
 
-function uploadFile(anything){
-  var file = anything.target.files[0]
-  var storageREF = storage.ref("test/" + file.name)
-  var task = storageREF.put(file)
+function uploadFile(anything) {
+  var file = anything.target.files[0];
+  var storageREF = storage.ref("test/" + file.name);
+  var task = storageREF.put(file);
 }
 
-function testU(){
+function testU() {
   // storage.ref("test").child("egypt.PNG").getDownloadURL().then(url => console.log(url))
-  storage.ref().child("test").listAll().then(res => {console.log(res)}).catch(err => console.log(err))
+  storage
+    .ref()
+    .child("test")
+    .listAll()
+    .then(res => {
+      console.log(res);
+    })
+    .catch(err => console.log(err));
+}
+
+function login(ID, PW){
+  var ID="Leehi"
+  var PW="dlrow olleH"
 }
 
 class App extends React.Component {
-  render(){
-    return (
-      <div className="App" style={{backgroundColor: 'pink'}}>
-      <p>안녕하세요</p>
+  constructor(props){
+    super(props)
+    this.state ={
+      lsw : "good"
+    }
+  }
 
-</div>
+  render() {
+    return (
+      <div style={{ backgroundColor: "pink" }}>
+        <p>
+          {"아이디  "}
+          <input />
+        </p>
+        <p>
+          비밀번호
+          <input type = {"password"} />
+        </p>
+        <butoon onClick = >확인</button>
+        <button onClick = {()=>{this.setState({lsw : "madagaskar"})}} > state </button>
+        <p> {this.state.lsw} </p>
+      </div>
     );
   }
 }
 
 export default App;
-
 
 // <p style={{backgroundColor: 'purple'}}>Web as Tool</p>
 // <th style={{color:'blue',width:'80',height:'80',backgroundColor: 'yellow'}}>projected by me</th>
