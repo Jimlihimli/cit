@@ -74,3 +74,11 @@ firebase deploy
 리팩터링은 소프트웨어 공학에서 '결과의 변경 없이 코드의 구조를 재조정함'을 뜻한다.
 Authentication
 https://firebase.google.com/docs/auth
+
+placeholder
+html poster attribute
+
+ui user interface
+   -미적이고 구조적인 소프트웨어 구조
+ux user experience
+   -기능적인 소프트웨어 구조

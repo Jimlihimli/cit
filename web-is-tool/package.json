@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "firebase": "^7.13.2",
+    "firebase": "^7.14.0",
     "multer": "^1.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -14,7 +14,9 @@
     "react-h5-audio-player": "^2.4.2",
     "react-player": "^1.15.3",
     "react-scripts": "3.3.1",
-    "styled-components": "^5.0.1"
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.2",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

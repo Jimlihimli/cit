@@ -1,4 +1,4 @@
-var score= "에베베베"
+var score= 34
 
 if(score > 100 || score < 0 || typeof score == "string"){
   console.log("invalid input.")
