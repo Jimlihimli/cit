@@ -1,7 +1,12 @@
 import React from "react";
 import logo from "./logo.svg";
 import firebase from "firebase";
-import { Button } from 'semantic-ui-react'
+import { Button, Input } from "semantic-ui-react";
+import Center from 'react-center';
+
+import VideoSW from "./components/videosw.js";
+
+import styled from "styled-components";
 
 // Set the configuration for your app
 // TODO: Replace with your app's config object
@@ -61,22 +66,10 @@ class App extends React.Component {
   login = () => {
     if (this.state.identification === ID && this.state.password === PW) {
       alert("로그인 성공");
-      this.setState({ lsw: "로그인 성공" });
+      this.setState({ lsw: "성공" });
     } else {
       alert("아이디나 비밀번호가 잘못되었습니다.");
       this.setState({ lsw: "로그인 실패" });
-    }
-  };
-
-  playMultimedia = () => {
-    if (this.state.lsw === "로그인 성공") {
-      return (
-        <video width="750" height="500" controls>
-          <source src="https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20200227_190814.mp4?alt=media&token=3c95f8e7-59da-4c89-b3de-05713bfdc667" />
-        </video>
-      );
-    } else {
-      return <p>로그인부터 하시죠!</p>;
     }
   };
 
@@ -86,49 +79,68 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={{ backgroundColor: "#20F577" }}>
-      <Button primary> asfsld </Button>
-        <p>
+      <div>
+      <Container>
+
+        <Center>
           {this.state.lsw === "LEe" || this.state.lsw === "로그인 실패" ? (
             <div>
-              <p>아이디</p>
-              <input
-                onChange={this.inputID}
-                onKeyPress={e => this.compare(e)}
-                placeholder="아이디를 입력해?!."
-              />
-              <p>
+              <p style={{color:"#e6e6fa"}}>
+              {" 아이디 "}
+                <Input
+                  size="large"
+                  onChange={this.inputID}
+                  onKeyPress={e => this.compare(e)}
+                  placeholder="아이디"
+                />
+              </p>
+              <p style={{color:"#e6e6fa"}}>
                 비밀번호
-                <input
+                <Input
+                  size="large"
                   onChange={this.inputPW}
                   onKeyPress={e => this.compare(e)}
                   type={"password"}
+                  placeholder="비밀번호"
                 />
               </p>
             </div>
           ) : (
-            <p>로그인 성공</p>
+            <p style={{color:"yellow"}}>로그인 성공</p>
           )}
-        </p>
+          </Center>
 
-        {this.state.lsw === "로그인 성공" ? (
-          <button onClick={()=> this.logout()}>로그아웃</button>
+        <Center>
+        {this.state.lsw === "성공" ? (
+          <Button primary onClick={() => this.logout()}>
+            로그아웃
+          </Button>
         ) : (
-          <button onClick={this.login}>로그인</button>
+          <Button secondary onClick={this.login}>
+            로그인
+          </Button>
         )}
-        <div>
-          {this.state.lsw === "로그인 성공" ? (
-            <video width="750" height="500" controls>
-              <source src="https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20200227_190814.mp4?alt=media&token=3c95f8e7-59da-4c89-b3de-05713bfdc667" />
-            </video>
-          ) : (
-            <p>로그인을 하라.!</p>
-          )}
-        </div>
+        </Center>
+
+        <Center>
+          <VideoSW sw={this.state.lsw} words={this.state.lsw} />
+          </Center>
+
+          </Container>
       </div>
     );
   }
 }
+
+const Container = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190905_190034.jpg?alt=media&token=cab238b7-3ef8-43c7-ab8e-402ba763615b);
+  background-size: cover;
+`;
 
 export default App;
 
@@ -210,7 +222,6 @@ export default App;
 //   inputID=e=>this.setState({identification : e.target.value});
 //
 //   inputPW=e=>this.setState({password : e.target.value});
-//
 //
 //   compare=e=>{
 //     if(e.key=="Enter"){

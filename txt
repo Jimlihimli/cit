@@ -82,3 +82,12 @@ ui user interface
    -미적이고 구조적인 소프트웨어 구조
 ux user experience
    -기능적인 소프트웨어 구조
+
+semantic ui말고도 react ui가 매우 다양하게 있음
+ 반응형 웹-스마트폰, 태블릿, PC,... 폷더블 폰의 등장으로 또 다른 국면 마지
+
+semantic ui react를 최상위폴더(여기선 web-is-tool)에 설치( npm install semantic-ui-react,npm install semantic-ui-css설치 이후
+import the minified CSS file in your app's entry file
+->import 'semantic-ui-css/semantic.min.css')시 entry file에 해당 코드(import 'sem ... min.css')
+를 하라고 나오는 데 여기서 entry file은 코드가 실행될 때 맨 먼저 실행되는 파일을 말하는 것으로
+여기선 index.js를 뜻함
