@@ -2,7 +2,6 @@ import React from "react";
 import logo from "./logo.svg";
 import firebase from "firebase";
 import { Button, Input } from "semantic-ui-react";
-import Center from 'react-center';
 
 import VideoSW from "./components/videosw.js";
 
@@ -21,6 +20,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 var storage = firebase.storage();
+var provider = new firebase.auth.GoogleAuthProvider();
 
 function uploadFile(anything) {
   var file = anything.target.files[0];
@@ -42,6 +42,12 @@ function testU() {
 
 const ID = "Leehi";
 const PW = "1234";
+const image1 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20191231_124649.jpg?alt=media&token=32d4645d-6053-44fa-93a8-c022719a436a"
+const image2 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190905_190034.jpg?alt=media&token=cab238b7-3ef8-43c7-ab8e-402ba763615b"
+const image3 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190616_204257.jpg?alt=media&token=a251a65f-3262-4a47-81b8-376ad818a736"
+
+const imageList = [image1, image2, image3]
+
 
 class App extends React.Component {
   constructor(props) {
@@ -49,9 +55,15 @@ class App extends React.Component {
     this.state = {
       lsw: "LEe",
       identification: "",
-      password: ""
+      password: "",
+      imgIdx : 0
     };
+
   }
+
+componentDidMount(){
+  this.changeImage()
+}
 
   inputID = e => this.setState({ identification: e.target.value });
 
@@ -77,12 +89,40 @@ class App extends React.Component {
     this.setState({ lsw: "LEe" });
   };
 
-  render() {
-    return (
-      <div>
-      <Container>
 
-        <Center>
+  changeImage = () => {
+    setInterval(() => {
+        this.setState({imgIdx : (this.state.imgIdx + 1)})
+    }, 2000);
+
+  }
+
+glogin = ()=> {
+  firebase.auth().signInWithPopup(provider).then(function(result) { // 자바스크립트의 Promise 구조를 찾아서 공부
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  console.log(user)
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  // ...
+});
+}
+
+  render() {
+    console.log(this.state.imgIdx)
+    return (
+      <div style = {{ backgroundImage : `url("${imageList[this.state.imgIdx % 3]}")` , backgroundPosition : "center", backgroundSize : "cover"}}>
+        <center>
+        <br/><br/><br/><br/><br/><br/>
           {this.state.lsw === "LEe" || this.state.lsw === "로그인 실패" ? (
             <div>
               <p style={{color:"#e6e6fa"}}>
@@ -108,9 +148,8 @@ class App extends React.Component {
           ) : (
             <p style={{color:"yellow"}}>로그인 성공</p>
           )}
-          </Center>
 
-        <Center>
+        <p>
         {this.state.lsw === "성공" ? (
           <Button primary onClick={() => this.logout()}>
             로그아웃
@@ -120,29 +159,23 @@ class App extends React.Component {
             로그인
           </Button>
         )}
-        </Center>
 
-        <Center>
+        <Button onClick = {this.glogin} > google login </Button>
+        </p>
+
           <VideoSW sw={this.state.lsw} words={this.state.lsw} />
-          </Center>
 
-          </Container>
+          </center>
+          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
       </div>
     );
   }
 }
 
-const Container = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190905_190034.jpg?alt=media&token=cab238b7-3ef8-43c7-ab8e-402ba763615b);
-  background-size: cover;
-`;
-
 export default App;
+
+
 
 // <p style={{backgroundColor: 'purple'}}>Web as Tool</p>
 // <th style={{color:'blue',width:'80',height:'80',backgroundColor: 'yellow'}}>projected by me</th>
