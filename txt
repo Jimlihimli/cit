@@ -91,3 +91,7 @@ import the minified CSS file in your app's entry file
 ->import 'semantic-ui-css/semantic.min.css')시 entry file에 해당 코드(import 'sem ... min.css')
 를 하라고 나오는 데 여기서 entry file은 코드가 실행될 때 맨 먼저 실행되는 파일을 말하는 것으로
 여기선 index.js를 뜻함
+
+onClick(과 같은 이벤트)={()=>함수}
+->{}안에 일반, 화살표함수를 넣으면 {}안은 함수를 선언하는 것이 되어 이벤트의 변화에 의해 함수가 실헹된다
+만일 함수 선언이 없으면 함수는 리턴 값으로 되어 이벤트에 의해 계속 실행된다

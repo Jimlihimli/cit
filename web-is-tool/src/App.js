@@ -45,6 +45,10 @@ const PW = "1234";
 const image1 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20191231_124649.jpg?alt=media&token=32d4645d-6053-44fa-93a8-c022719a436a"
 const image2 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190905_190034.jpg?alt=media&token=cab238b7-3ef8-43c7-ab8e-402ba763615b"
 const image3 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190616_204257.jpg?alt=media&token=a251a65f-3262-4a47-81b8-376ad818a736"
+const image4 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190331_143705.jpg?alt=media&token=ff343b8b-26dc-4a55-834b-021750591488"
+const small = {width : "100px" ,height : "250px", color : "black"}
+const big = {width : "200px" ,height : "500px", color : "black", opacity : "0.5"}
+
 
 const imageList = [image1, image2, image3]
 
@@ -56,7 +60,9 @@ class App extends React.Component {
       lsw: "LEe",
       identification: "",
       password: "",
-      imgIdx : 0
+      imgIdx : 0,
+      imgshow : false,
+      imgSize : small
     };
 
   }
@@ -93,7 +99,7 @@ componentDidMount(){
   changeImage = () => {
     setInterval(() => {
         this.setState({imgIdx : (this.state.imgIdx + 1)})
-    }, 2000);
+    }, 5000);
 
   }
 
@@ -117,13 +123,27 @@ glogin = ()=> {
 });
 }
 
+ wow = () => 6
+ oops = () => {
+   alert("sdfg")
+   console.log(32)
+ }
+
+ bigPicture = () => {
+   this.setState({imgshow: !this.state.imgshow, imgSize : (!this.state.imgshow? big : small)})
+   // if(this.state.imgshow !== "false"){
+   //   console.log("HI")
+   //
+   // }
+ }
+
   render() {
     console.log(this.state.imgIdx)
     return (
-      <div style = {{ backgroundImage : `url("${imageList[this.state.imgIdx % 3]}")` , backgroundPosition : "center", backgroundSize : "cover"}}>
-        <center>
-        <br/><br/><br/><br/><br/><br/>
-          {this.state.lsw === "LEe" || this.state.lsw === "로그인 실패" ? (
+      <div style = {{ backgroundImage : `url("${imageList[this.state.imgIdx % 3]}")` , backgroundPosition : "center", backgroundSize : "cover"}} >
+        <center style={{ padding : "384.5px"}}>
+
+          {this.state.lsw === "LEe" && !this.state.imgshow || this.state.lsw === "로그인 실패" ? (
             <div>
               <p style={{color:"#e6e6fa"}}>
               {" 아이디 "}
@@ -161,13 +181,14 @@ glogin = ()=> {
         )}
 
         <Button onClick = {this.glogin} > google login </Button>
+
         </p>
 
           <VideoSW sw={this.state.lsw} words={this.state.lsw} />
 
-          </center>
-          <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+          <img onClick={()=> this.bigPicture()} src = {image4} style={this.state.imgSize}/>
 
+          </center>
       </div>
     );
   }
