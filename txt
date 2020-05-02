@@ -95,3 +95,5 @@ import the minified CSS file in your app's entry file
 onClick(과 같은 이벤트)={()=>함수}
 ->{}안에 일반, 화살표함수를 넣으면 {}안은 함수를 선언하는 것이 되어 이벤트의 변화에 의해 함수가 실헹된다
 만일 함수 선언이 없으면 함수는 리턴 값으로 되어 이벤트에 의해 계속 실행된다
+
+hover개념
