@@ -25,7 +25,7 @@ class Comment extends React.Component {
   render() {
     return (
       <div>
-        <input onChange={this.upload} value={this.state.Comment} />
+        <input onChange={this.upload} value="wow" />
         <Button onClick={this.register}> 등록</Button>
         {this.state.ComList.map(com => (
           <p>{com.content + "  >>  " + com.time}</p>
