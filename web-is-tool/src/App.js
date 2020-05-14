@@ -104,7 +104,6 @@ glogin = ()=> {
  }
 
 
-
   render() {
     return (
       <div style = {{ backgroundImage : `url("${imageList[this.state.imgIdx % 3]}")` , backgroundPosition : "center", backgroundSize : "cover", padding : "384.5px"}} >

@@ -99,3 +99,7 @@ onClick(과 같은 이벤트)={()=>함수}
 hover개념
 
 formatter - prettier가 예시
+atomic design
+
+code splitting을 하는 경우 하나의 function 혹은 변수를 export할때는 default를
+써 주고 두 개 이상을 export할 때에는 default를 쓰지 않는다
