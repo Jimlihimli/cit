@@ -18,6 +18,7 @@ firebase.initializeApp(firebaseConfig);
 
 // Get a reference to the storage service, which is used to create references in your storage bucket
 var storage = firebase.storage();
+var db = firebase.firestore();
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function uploadFile(anything) {
@@ -108,7 +109,6 @@ glogin = ()=> {
     return (
       <div style = {{ backgroundImage : `url("${imageList[this.state.imgIdx % 3]}")` , backgroundPosition : "center", backgroundSize : "cover", padding : "384.5px"}} >
         <center>
-
           {this.state.lsw === "LEe" && !this.state.imgshow || this.state.lsw === "로그인 실패" ? (
 
             <div>
@@ -151,15 +151,14 @@ glogin = ()=> {
         )}
 
         <Button onClick = {this.glogin} > Google login </Button>
-
         </p>
 
           <VideoSW sw={this.state.lsw} words={this.state.lsw} />
           <a href="http://www.naver.com">www.daum.net</a>
 
-          <img onClick={(e)=> this.bigPicture(e)} src = {image4} style={this.state.imgSize} />
+          <Chatting sw={this.state.lsw} lswlsw = {this.state.lsw} db = {db}/>
 
-          <Chatting sw={this.state.lsw} lswlsw = {this.state.lsw}/>
+          <img onClick={(e)=> this.bigPicture(e)} src = {image4} style={this.state.imgSize} />
           </center>
       </div>
     );

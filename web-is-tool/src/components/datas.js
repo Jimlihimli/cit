@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Button, Input } from "semantic-ui-react";
+import moment from "moment";
 
 const ID = "Leehi";
 const PW = "1234";
@@ -9,9 +10,10 @@ const image2 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.
 const image3 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190616_204257.jpg?alt=media&token=a251a65f-3262-4a47-81b8-376ad818a736"
 const image4 = "https://firebasestorage.googleapis.com/v0/b/web-as-tool.appspot.com/o/test%2F20190331_143705.jpg?alt=media&token=ff343b8b-26dc-4a55-834b-021750591488"
 const small = {width : "100px" ,height : "250px", color : "black", opacity : "0.7"}
-const big = {width : "200px" ,height : "500px", color : "black"}
+const big = {width : "200px" ,height : "500px"}
 const imageList = [image1, image2, image3]
 const chattings = [];
+const lists = [];
 
 function VideoSW(props){
   return (
@@ -29,20 +31,45 @@ class Chatting extends React.Component{
     };
   }
 
+componentDidMount = () => {
+
+    let dbChattings = []
+    this.props.db.collection('comments').get()
+  .then((snapshot) => {
+    snapshot.forEach((doc) => {
+     let data = doc.data()
+     dbChattings.push({content : data.content, time : data.time})
+    });
+  })
+  .then(() => {this.setState({chatlist : dbChattings})})
+  .catch((err) => {
+    console.log('Error getting documents', err);
+  });
+}
+
 register=e=>{
   this.setState({ chat : e.target.value});
 };
 
 chattingList=e=>{
+  let chattings  = this.state.chatlist
   chattings[chattings.length] = {
-    lists: this.state.chat
+    content : this.state.chat,
+    time : moment().format('MMMM Do YYYY, h:mm:ss a')
   };
+  this.props.db.collection('comments').add({
+    content : this.state.chat,
+    time : moment().format('MMMM Do YYYY, h:mm:ss a')
+}).then(ref => {
+  console.log('Added document with ID: ', ref.id);
+});
   this.setState({ chatlist: chattings});
-  alert("댓글이 등록되었습니다.");
+  // alert("댓글이 등록되었습니다.");
   this.setState({ chat : ""});
 };
 
   render(){
+
     return(
         <div>
         {this.props.lswlsw==="성공" ?
@@ -51,7 +78,7 @@ chattingList=e=>{
           <Input placeholder="댓글을 입력하세요" onChange={this.register} value={this.state.chat}/>
           <Button content='등록' primary onClick={this.chattingList}/>
 
-          {this.state.chatlist.map(e=>(<p>{e.lists}</p>))}
+          {this.state.chatlist.map(number=>(<p>{number.content} 등록시간 :  {number.time}</p>))}
 
           </div>
           :
